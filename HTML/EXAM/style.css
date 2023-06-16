@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 2000px;
+}
+
+    .container{
+        width: 1300px;
+        height: 800px;
+        font-family: "dalton maag", sans-serif;
+        background-image: url(PH-en-20230116-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+        color: white;
+    }
+
+        main{
+            background: rgba(0,0,0,.5);radial-gradient: (50%, 100%,transparent 0,rgba(0,0,0,.7) 100%);
+           
+        }
+
+            header{
+                background: transparent;
+                
+            }
+
+                .header-logo{
+                    width: 150px;
+                    vertical-align: middle;
+                    margin: 10px 0 0 50px;
+                }
+
+                .select-en{
+                    margin: 0 30px 0 850px;
+                    background-color: rgba(0,0,0,.4);
+                    border: 1px solid white;
+                    padding: 5px 10px;
+                    font-size: 15px;
+                    color: white;
+                }
+
+                .a-signin{
+                    background-color: red;
+                    padding: 7px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: 15px;
+                    color: white;
+                }
+
+                h1{
+                    text-align: center;
+                    font-size: 50px;
+                    width: 600px;
+                    margin: 150px 0 20px 370px;  
+                }
+
+                h2, h4{
+                    text-align: center;
+                }
+
+                h2{
+                    margin: 0 0 40px 0;
+                }
+
+                    input{
+                        width: 450px;
+                        height: 50px;
+                        margin: 20px 0 20px 360px;
+                    }
+
+                    .get-started{
+                        padding: 13px 15px;
+                        text-decoration: none;
+                        background-color: red;
+                        color: white;
+                    }
+
+        ul{
+            
+            background-color: #000000;
+            
+           
+        }
+
+        .main-li{
+                border-top: 10px solid #222222;
+                width: 1300px;
+                height: 500px;
+                padding: 100px 0 0 50px;
+            }
+            
+        
+
+            .section1-h1, .section1-h2{
+              margin: 10px 0 30px 20px;
+              width: 450px;
+              text-align: left;
+            }
+
+            .section2-h1, .section2-h2{
+                margin: 10px 0 0px 700px;
+                width: 450px;
+                text-align: left;
+              }           
+
+            .img-section1{
+                position: relative;
+                left: 600px;
+                bottom: 230px;
+                width: 500px;
+            }
+
+            .img-section2{
+                position: relative;
+                right: 30px;
+                bottom: 300px;
+                width: 400px;
+            }
+
+        footer{
+           border-top: 10px solid #222222;
+           background-color: #000000;
+           
+        }
+
+            .footer-ul{
+                margin: 50px;
+                display: inline-block;
+                text-align: start;
+            }
+
+            .footer-ul-1{
+                margin: 70px 0 0 10px;
+                display: inline-block;
+            }
+
+            .footer-a{
+                text-decoration: none;
+                display: inline-block;
+                color: #222222;
+                list-style-type: none;
+                position: relative;
+                bottom: 110px;
+                left: 180px
+                
+            }
+
+            .footer-li{
+                color: #222222;
+                width: 0;
+                height: 0;
+                padding: 0;
+                text-decoration: none;
+                
+                   
+            }
+
+            li{
+                list-style-type: none;
+            }
+
+
+
+
+
+                
+            
+

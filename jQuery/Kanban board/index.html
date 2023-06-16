@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kanban Board</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://developers.google.com/speed/libraries/#jquery-ui"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+              $( function() {
+                $( "#sortable1, #sortable2, #sortable3, #sortable4, #sortable5" ).sortable({
+                    connectWith: ".connected-sortable"
+                }).disableSelection();
+                } );
+            </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <section>
+                <div class="to-do">
+                    <h3>To-do</h3>
+                    <ul id="sortable1" class="connected-sortable">
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="carrot.jpg" alt="Carrot"></li>
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="pineapple.jpg" alt="Pineapple"></li>
+                        <li class="ui-state-default">Team Huddle<img src="strawberry.jpg" alt="Strawberry"></li>
+                        <li class="ui-state-default">Team Huddle<img src="watermelon.jpg" alt="Watermelon"></li>
+                        <li class="ui-state-default">Team Huddle<img src="orange.jpg" alt="Avocado"></li>
+                    </ul>
+                </div>
+                <div class="in-progress">
+                    <h3>In Progress</h3>
+                    <ul id="sortable2" class="connected-sortable">
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="carrot.jpg" alt="Carrot"></li>
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="strawberry.jpg" alt="Strawberry"></li>
+                        <li class="ui-state-default">Team Huddle<img src="watermelon.jpg" alt="Watermelon"></li>
+                    </ul>
+                </div>
+                <div class="for-approval">
+                    <h3>For Approval</h3>
+                    <ul id="sortable3" class="connected-sortable">
+                        <li class="ui-state-default">Team Huddle<img src="carrot.jpg" alt="Carrot"></li>
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="pineapple.jpg" alt="Pineapple"></li>
+                        <li class="ui-state-default">Team Huddle<img src="orange.jpg" alt="Avocado"></li>
+                    </ul>
+                </div>
+                <div class="testing">
+                    <h3>Testing</h3>
+                    <ul id="sortable4" class="connected-sortable">
+                        <li class="ui-state-default">Team Huddle<img src="carrot.jpg" alt="Carrot"></li>
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="pineapple.jpg" alt="Pineapple"></li>
+                        <li class="ui-state-default">Team Huddle<img src="strawberry.jpg" alt="Strawberry"></li>
+                        <li class="ui-state-default">Team Huddle<img src="orange.jpg" alt="Avocado"></li>
+                    </ul>
+                </div>
+                <div class="done">
+                    <h3>Done</h3>
+                    <ul id="sortable5" class="connected-sortable">
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="carrot.jpg" alt="Carrot"></li>
+                        <li class="ui-state-default">Team Huddle<img src="avocado.jpg" alt="Avocado"></li>
+                        <li class="ui-state-default">Team Huddle<img src="pineapple.jpg" alt="Pineapple"></li>
+                        <li class="ui-state-default">Team Huddle<img src="strawberry.jpg" alt="Strawberry"></li>
+                        <li class="ui-state-default">Team Huddle<img src="watermelon.jpg" alt="Watermelon"></li>
+                        <li class="ui-state-default">Team Huddle<img src="orange.jpg" alt="Avocado"></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+    </body>
+</html>
+
+
+                            

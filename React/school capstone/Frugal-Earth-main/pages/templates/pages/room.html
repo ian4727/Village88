@@ -1,0 +1,295 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <title>Item Post</title>
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+                <div class="search-bar">
+                    <form method="GET" action="{% url 'feeds' %}">
+                    <i class="bi bi-search"></i>
+                    <input type="text" name="q" id="" placeholder="What are you looking for?"/>
+                    </form>
+                </div>
+
+
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://frugalearth.pythonanywhere.com/aboutus/#contactus">Contact Us</a>
+                  </li>
+
+                  <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
+
+                {% else %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+
+                {% endif %}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+
+
+
+        <div class="container">
+
+<div class="item-page">
+    <div class="row">
+        <div class="col-sm-8">
+
+<div class="item-photo">
+    <img src="{{room.image.url}}" class="rounded">
+</div>
+
+
+        </div>
+            <div class="col-sm-4">
+
+
+
+                <div class="item-title">
+                    <h5>{{room.name}}<br></h5>
+                    <small>Category: {{room.category}}</small>
+                </div>
+
+                <div class="item-detail">
+                    <h6>Notes: {{room.notes}}</h6>
+                    <small>Location: {{room.location}}</small><br>
+                    <small>Condition: {{room.condition}}</small><br>
+                    <small>Quantity: {{room.quantity}}</small><br>
+
+
+                    <!--a type="submit" class="mx-1 btn btn-outline" href ="{% url 'chat' %}"><h6>Send a private message</h6></a-->
+
+                </div>
+
+
+                  <!--<img src="static/image/map.PNG" class="rounded">!-->
+
+
+
+
+                <!--div class="item-page">
+
+
+
+                    <div class="user">
+                        <div class="profile-photo">
+                            <img src="{{room.host.avatar.url}}">
+                        </div>
+
+                        <div class="item-user">
+                            <h5>@{{room.host.username}}</h5>
+                            <small>{{room.created|timesince}} ago</small>
+                        </div>
+                    </div>
+                </div>
+                <!--<button type="button" class="btn btn-send"  style="width:180px;">
+                    Send
+               </button>!-->
+
+ <div class="user" style="border-bottom: 1px solid #6c757d; padding: 1rem;">
+
+
+                       <div class="profile-photo">
+                            <img src="{{room.host.avatar.url}}"/>
+                        </div>
+
+                        <!--<div class="account-photo">
+                            <img src="{{request.user.avatar.url}}">
+                        </div>!-->
+
+                        <div class="create-info">
+                            <a href="{% url 'user-profile' room.host.id %}" class=""><h6>@{{room.host.username}}</h6></a>
+                            <small>{{room.created|timesince}}</small>
+                        </div>
+<a href ="{% url 'chat' %}">
+ <button type="button" class="btn btn-danger" style="border-radius: 50px; margin-left: 3rem;"><i class="bi bi-chat"></i> Chat</button></a>
+ </div>
+
+
+
+
+
+
+
+
+
+
+            {% for message in room_messages %}
+
+            <div class="comment-sect" style="margin-top: 0.5rem;">
+
+                 <div class="comment-photo" style="margin: auto;">
+                <a href="{% url 'user-profile' message.user.id %}">
+                    <div class="profile-photo">
+                    <img src="{{message.user.avatar.url}}">
+                    </div>
+                </a>
+                </div>
+
+                <div class="comment-info" style="width: 300px;">
+
+                <small>@{{message.user}}</small>
+                <small>{{message.created|timesince}} ago </small>
+
+                <p style="margin-bottom:0;">{{message.body}}</p>
+
+                {% if request.user == message.user %}
+                <small><a href="{% url 'delete-message' message.id %}">Delete</a></small>
+                {% endif %}
+                <hr>
+                </div>
+
+            </div><!--end of comment-sect-->
+
+
+            {% endfor %}
+
+
+
+            {% if request.user.is_authenticated %}
+            <div class="comment-form" style="margin-top: 0.5rem; text-align:center;">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <input type="text" name="body" placeholder="Write your message here...">
+
+                </form>
+            </div>
+            {% endif %}
+
+
+          </div>
+
+
+    </body>
+</html>
+
+
+
+
+<!--
+=======
+
+
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+{% block content %}
+
+<div>
+    <a href="{% url 'feeds' %}">Back</a>
+</div>
+
+<div>
+    <div>
+    <h3>{{room.name}}<h3>
+<<<<<<< HEAD
+    </div>
+        <p>{{room.notes}}</p>
+        <p>Location: {{room.location}}</p>
+        <p>Condition: {{room.condition}}</p>
+        <p>Quantity: {{room.quantity}}</p>
+
+
+        <div>
+            <small>{{room.category.name}}</small>
+        </div>
+</div>
+=======
+    </div>
+        <p>{{room.notes}}</p>
+        <p>Location: {{room.location}}</p>
+        <p>Condition: {{room.condition}}</p>
+        <p>Quantity: {{room.quantity}}</p>
+
+
+        <div>
+            <small>{{room.category.name}}</small>
+        </div>
+</div>
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+
+
+
+
+<hr>
+<div class="comment-wrapper">
+    <h4>Conversation</h4>
+<<<<<<< HEAD
+
+
+    {% for message in room_messages %}
+=======
+
+
+    {% for message in room_messages %}
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+        <div>
+            {% if request.user == message.user %}
+            <a href="{% url 'delete-message' message.id %}">Delete</a>
+            {% endif %}
+            <small>@{{message.user}} {{message.created|timesince}} ago </small>
+            <p>{{message.body}}</p>
+            <hr>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% if request.user.is_authenticated %}
+<div class="comment-form">
+    <form method="POST" action="">
+<<<<<<< HEAD
+        {% csrf_token %}
+        <input type="text" name="body" placeholder="Write your message here...">
+
+=======
+        {% csrf_token %}
+        <input type="text" name="body" placeholder="Write your message here...">
+
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+    </form>
+</div>
+{% endif %}
+
+<<<<<<< HEAD
+{% endblock %}!-->
+
+{% endblock %}
+

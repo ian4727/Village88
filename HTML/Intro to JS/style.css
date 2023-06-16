@@ -1,0 +1,72 @@
+
+
+
+
+#container{
+    display: inline-block;
+    width: 970px;
+    height: 800px;
+    
+}
+
+#sidebar{
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    height: 800px;
+    background-color: lightgray;
+    padding: 8px;
+    margin-top: 0;
+}
+
+#main{
+    padding-left: 10px;
+    margin-left: 25px;
+    margin-top: 0;
+    display: inline-block;
+    width: 68%;
+    vertical-align: top;
+   
+}
+
+.gray{
+    color: gray;
+    margin-bottom: 2px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 10px;
+}
+
+#comments{
+    margin-top: 10px;
+}
+
+i{
+    font-style: normal;
+    color: blue;
+}
+
+.box{
+    outline: solid lightgray;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+}
+
+li, p{
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+#last{
+    margin-right: 18px;
+}
+
+ol{
+    padding-left: 10px;
+    margin-left: 5px;
+}

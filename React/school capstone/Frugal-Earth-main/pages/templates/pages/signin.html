@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <title>Sign In</title>
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+
+     <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+
+    </head>
+
+
+    <body style="background-color: #0d1017;">
+
+        <!-- A grey horizontal navbar that becomes vertical on small screens
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div class="container">
+            <a class="navbar-brand navbar-right" href="/home/">FrugalEarth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav  ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="# ">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="mx-1 btn btn-outline-light w-100" href="{% url 'signup' %}">Sign Up</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav!-->
+
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+                <!--div class="search-bar">
+                    <form method="GET" action="{% url 'feeds' %}">
+                    <i class="bi bi-search"></i>
+                    <input type="text" name="q" id="" placeholder="What are you looking for?"/>
+                    </form>
+                </div-->
+
+
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://frugalearth.pythonanywhere.com/aboutus/#contactus">Contact Us</a>
+                  </li>
+
+                  <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
+
+                {% else %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+
+                {% endif %}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+          <div class="vh-100 align-items-center justify-content-center">
+  <div class="container" style="width: 330px; font-family: 'roboto', sans-serif; font-size: 13px; ">
+
+
+
+              <div class="text-white text-center" style="background-color: #0d1017;  ">
+                <img src="{% static 'globelogo.png' %}" class="img-responsive center-block d-block mx-auto img-fluid mt-5">
+              <h4 class="p-3 mb-0">Sign in to FrugalEarth</h4>
+              </div>
+
+
+    {% load socialaccount %}
+<!--h1>Google Login</h1!
+<a href="{% provider_login_url 'google'%}?next=/">Login with Google</a>-->
+
+
+
+              <form method ="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
+              {% csrf_token %}
+
+            <div class="googlelink">
+                <button type="button" class="btn-google" style="width: 100%; padding: 0.5rem; border-radius: 8px;"><img src="{% static 'google.png' %}" style="width: 8%; margin-right: 0.5rem;"> <a href="{% provider_login_url 'google'%}?next=/" style="text-decoration: none; color: black;"> Sign in with Google</a></button>
+              </div>
+
+               <div class="" style="display: flex; text-align: center; justify-content: space-between; color: #6c757d; margin: 0.5rem;">
+                  <p style="margin: 0;">---------------------------</p>
+                  <p style="margin: 0;">OR</p>
+                  <p style="margin: 0;">---------------------------</p>
+                </div>
+
+
+                  <label class="form-label">Username</label>
+                  <input type="text" class="form-control bg-dark border border-secondary text-white" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+
+
+                  <label class="form-label mt-3">Password</label> <!--<a href="#" class="text-decoration-none" style="margin-left: 105px; text-align: right;">Forgot password?</a>!-->
+                  <input type="password" class="form-control bg-dark border border-secondary text-white" name="password" placeholder="Enter password">
+                 <button type="submit" value="Login" class="btn btn-success w-100 mt-3">Sign in</button>
+              </form>
+
+              <!--Python codes-->
+
+{%if messages%}
+<ul class="messages text-white">
+  {% for message in messages%}
+  <li>{{ message}}</li>
+  {% endfor %}
+</ul>
+{% endif%}
+
+
+
+
+<!--end of Python codes-->
+
+
+              <div class="text-white rounded border border-dark mt-3" style="background-color: #0d1017;">
+                  <p class="p-1 mt-2 text-center">Not registered yet? <a href="{% url 'signup' %}" class="text-decoration-none">Sign up here</a>.</p>
+              </div>
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+      </body>
+
+
+        <footer>
+
+        </footer>
+
+</html>
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <title>signin</title>
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+
+     <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+
+    </head>
+
+
+    <body style="background-color: #0d1017;">
+
+        <!-- A grey horizontal navbar that becomes vertical on small screens -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand navbar-right" href="home">FrugalEarth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav  ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="# ">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <!--li class="nav-item">
+                  <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup.html';">Sign up</button>
+                </li!-->
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+          <div class="vh-100 align-items-center justify-content-center">
+  <div class="container" style="width: 330px; font-family: 'roboto', sans-serif; font-size: 13px; ">
+
+
+
+              <div class="text-white text-center" style="background-color: #0d1017;  ">
+                <!--<img src="template/globelogo.png" class="img-responsive center-block d-block mx-auto img-fluid mt-5">!-->
+              <h4 class="p-3 mb-0">Sign in to FrugalEarth</h4>
+              </div>
+
+              <form method ="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
+              {% csrf_token %}
+                  <label class="form-label">Username</label>
+                  <input type="text" class="form-control bg-dark border border-secondary text-white" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+
+
+                  <label class="form-label mt-3">Password</label> <a href="#" class="text-decoration-none" style="margin-left: 105px; text-align: right;">Forgot password?</a>
+                  <input type="password" class="form-control bg-dark border border-secondary text-white" name="password" placeholder="Enter password">
+                 <button type="submit" value="Login" class="btn btn-success w-100 mt-3">Sign in</button>
+              </form>
+
+              <div>
+                <a class="btn btn-success w-100 mt-3" href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+              </div>
+
+              <!--Python codes-->
+
+{%if messages%}
+<ul class="messages">
+  {% for message in messages%}
+  <li>{{ message}}</li>
+  {% endfor %}
+</ul>
+{% endif%}
+
+
+
+
+<!--end of Python codes-->
+
+
+              <div class="text-white rounded border border-dark mt-3" style="background-color: #0d1017;">
+                  <p class="p-1 mt-2 text-center">Not registered yet? <a href="{% url 'signup' %}" class="text-decoration-none">Sign up here</a>.</p>
+              </div>
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+      </body>
+
+
+        <footer>
+
+        </footer>
+
+</html>
+

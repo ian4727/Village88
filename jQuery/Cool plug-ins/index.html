@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Cool Plugins</title>
+        <link rel="stylesheet" type="text/css" href="style.css">  
+        
+        <!-- 2nd plugin -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="crossorigin="anonymous"></script>
+        <!-- Moment JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+        <!-- Moment Timezone JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.4/moment-timezone-with-data.js"></script>
+        <!-- Countdown Timer JS -->
+        <script src="script.js"></script>
+        <!-- Segment 7 Fonts CSS -->
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment7" type="text/css"/>
+
+        <!--3rd plugin-->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- Blue-Slider JS -->
+        <script src="js/blue-slider.js"></script>
+        
+    </head>
+
+    <body>
+        <!--div class="main-container"-->
+            <!--1st plugin-->
+            <div class="container demo">
+
+                <!--3rd plugin-->
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_1" checked />
+                    <input type="radio" name="slides" id="slides_2" />
+                    <input type="radio" name="slides" id="slides_3" />
+                    <ul>
+                        <li><img src="DSC_3040.JPG" alt="Bicol"></li>
+                        <li><img src="IMG_2258.JPG" alt="Keywords"></li>
+                        <li><img src="rj45.jpeg" alt="Keywords"></li>
+                    </ul>
+                    
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_1"></label>
+                            <label for="slides_2"></label>
+                            <label for="slides_3"></label>
+   
+                        </div>
+                    </div>
+                </div>
+
+                <!--2nd plugin-->
+                <!-- Countdown Timer HTML -->
+                
+                <div class="wrapper">
+                    <h1>Counting down to Graduation day!</h1>
+                    <h2><span class="sub-message">I will be graduating from college in</span></h2>
+                
+                    <div class="clock">
+                        <div class="column days">
+                            <div class="timer" id="days"></div>
+                            <div class="text">DAYS</div>
+                        </div>
+                        <div class="timer days">:</div>
+                        <div class="column">
+                            <div class="timer" id="hours"></div>
+                            <div class="text">HOURS</div>
+                        </div>
+                        <div class="timer">:</div>
+                        <div class="column">
+                            <div class="timer" id="minutes"></div>
+                            <div class="text">MINUTES</div>
+                        </div>
+                        <div class="timer">:</div>
+                        <div class="column">
+                            <div class="timer" id="seconds"></div>
+                            <div class="text">SECONDS</div>
+                        </div>
+                    </div>
+                </div>
+                                <!-- End Countdown Timer HTML -->
+                <!--end of 2nd plugin-->
+
+                <div class="content">
+                    <div id="large-header" class="large-header">
+                        <canvas id="demo-canvas"></canvas>
+                        <h1 class="main-title"><span class="thin"></span></h1>
+                    </div>   
+                </div>
+            <!--/div-->
+        </div>
+
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js'></script>
+        <!-- end of 1st plugin-->
+        
+        </body>
+</html>

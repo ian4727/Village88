@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Theme</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function() {
+            const socket = io();
+
+            socket.on('updateColor', function(color) {
+                $('body').css('background-color', color);
+            });
+
+            $('#lightBtn').click(function() {
+                $('body').css('background-color', '#fff');
+                socket.emit('updateColor', '#fff');
+            });
+            $('#randomBtn').click(function() {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $('body').css('background-color', '#' + randomColor);
+                socket.emit('updateColor', '#' + randomColor);
+            });
+            $('#darkBtn').click(function() {
+                $('body').css('background-color', '#000');
+                socket.emit('updateColor', '#000');
+            });
+        });
+</script>
+
+</head>
+<body>
+    <button id="lightBtn">Light mode</button>
+    <button id="randomBtn">Random mode</button>
+    <button id="darkBtn">Dark mode</button>
+</body>
+</html>

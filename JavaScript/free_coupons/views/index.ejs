@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Free Coupons</title>  
+</head>
+<body>
+    
+    
+    <h1>Welcome Customer!</h1>
+        <p>We're giving away <b>free coupons</b></p>
+        <p>as token of appreciation</p>
+        
+            <p>for first <%= customer %> customer(s)</p><br>
+            <form id="plain" action="/process" method="post">    
+                <p>Kindly type your name:</p>
+                <input type="text" name="name"><br><br>
+                <input class="submit-claim" type="submit" name="action" value="Submit"><br><br>
+            </form>
+        
+            <form id="discount" action="/process" method="post">
+                <p>50% Discount</p>
+                <h1 class="code"><%= code %></h1>
+                    <input id="reset" type="submit" name="action" value="Reset count">
+                    <input id="again" type="submit" name="action" value="Claim again">
+            </form>
+            
+            <form id="sorry" class="<%- sorryDisplay %>" action="/process" method="post">
+                <p>Sorry!</p>
+                <h1>Unavailable</h1>
+                <input id="reset" type="submit" name="action" value="Reset count">
+                <input id="again" type="submit" name="action" value="Claim again">
+            </form>
+            
+            <script>
+                document.getElementById("plain").addEventListener("submit", function(){
+                    event.preventDefault();
+                    document.getElementById("discount").style.display = "block";
+                })
+
+                document.getElementById("reset").addEventListener("submit", function(){
+                    document.getElementById("discount").style.display = "none";
+                })
+
+                document.getElementById("again").addEventListener("submit", function(){
+                    document.getElementById("discount").style.display = "none";
+                })
+
+            </script>
+          
+</body>
+</html>

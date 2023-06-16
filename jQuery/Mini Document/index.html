@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Mini Documentation</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script>
+            $(document).ready(function() {
+                $("button.click").click(function(){
+                    alert("handler for .click() called.")
+                })
+                $("button.hide").click(function(event){
+                    $("p.p-hide").hide();
+                })
+                $("button.show").click(function(event){
+                    $("p.hidden").show();
+                })
+                $("button.toggle").click(function(event){
+                    $("p.p-toggle").toggle();
+                })
+                $("button.slide-down").click(function(event){
+                    $("div.slideDown-div").slideDown();
+                })
+                $("button.slide-up").click(function(event){
+                    $("div.slideUp-div").slideUp();
+                })
+                $("button.slide-toggle").click(function(event){
+                    $("div.slideToggle-div").slideToggle();
+                })
+                $("button.fade-in").click(function(event){
+                    $("div.fade-in-div").fadeIn("slow");
+                })
+                $("button.fade-out").click(function(event){
+                    $("div.fade-out-div").fadeOut("slow");
+                })
+                $("button.add-class").click(function(event){
+                    $("div").last().addClass("design");
+                })
+                $("button.before").click(function(event){
+                    $("div.before-div").before("This is a blue container");
+                })
+                $("button.after").click(function(event){
+                    $("div.after-div").after("This is a blue container");
+                })
+                $("button.append").click(function(event){
+                    $("div.append-div").append("This is another blue container");
+                })
+                $("button.html").click(function(event){
+                    $("div.html-div").html("<span>No more blue container here!</span>");
+                })
+                $("button.attr").click(function(event){
+                    var title=$("span").attr("title");
+                    $("h4").text(title);
+                })
+                $("input").click(function(event){
+                    $("button.val").val(function(i, val){
+                    return val;
+                })
+                })
+                $("button.text").click(function(event){
+                    $("p.text-p").text("Get the combined text contents of each element in the set of matched elements, including their descendants.");
+                })
+                
+            });
+      </script>
+   </head>
+
+   <body>
+        <aside>
+            <ul>
+                <li><a href="#click">.click()</a></li>
+                <li><a href="#hide">.hide()</a></li>
+                <li><a href="#show">.show()</a></li>
+                <li><a href="#toggle">.toggle()</a></li>
+                <li><a href="#slide-down">.slideDown()</a></li>
+                <li><a href="#slide-up">.slideUp()</a></li>
+                <li><a href="#slide-toggle">.slideToggle()</a></li>
+                <li><a href="#fade-in">.fadeIn()</a></li>
+                <li><a href="#fade-out">.fadeOut()</a></li>
+                <li><a href="#before">.before()</a></li>
+                <li><a href="#after">.after()</a></li>
+                <li><a href="#append">.append()</a></li>
+                <li><a href="#html">.html()</a></li>
+                <li><a href="#attr">.attr()</a></li>
+                <li><a href="#val">.val()</a></li>
+                <li><a href="#text">.text()</a></li>
+                <li><a href="#add-class">.addClass()</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <h1>My Mini Documentation</h1>
+            <section>
+                <h5 id="click">Click</h5>
+                <button class="click">.click()</button>
+                <p class>Binds an event handler to the "click" JavaScript event, or trigger that event on an element. Example: Clicking the button will display alert box.</p>
+
+                <h5 id="hide">Hide</h5>
+                <button class="hide">.hide()</button>
+                <p class="p-hide">Hides the matched elements. Example: Hiding this paragraph.</p>
+
+                <h5 id="show">Show</h5>
+                <button class="show">.show()</button>
+                <p class="p-show">Displays the matched elements. Example: Showing the hidden paragraph here.</p>
+                <p class="hidden">Surprise!</p>
+
+                <h5 id="toggle">Toggle</h5>
+                <button class="toggle">.toggle()</button>
+                <p>Toggles the visibility of elements: Example: Showing one parapgraph below alternately.</p>
+                <p class="p-toggle">Now you can't</p>
+                <p class="p-toggle" id="p-toggle-hidden">You can see me</p>
+
+                <h5 id="slide-down">Slide Down</h5>
+                <button class="slide-down">.slideDown()</button>
+                <p>Animates the height of the matched elements. This causes lower parts of the page to slide down, making way for the revealed items.</p>
+                <div class="slideDown-div"></div>
+
+                <h5 id="slide-up">Slide Up</h5>
+                <button class="slide-up">.slideUp()</button>
+                <p>Animates the height of the matched elements. This causes lower parts of the page to slide up, making way for the revealed items.</p>
+                <div class="slideUp-div"></div>
+
+                <h5 id="slide-toggle">Slide Toggle</h5>
+                <button class="slide-toggle">.slideToggle()</button>
+                <p>causes lower parts of the page to slide up or down, appearing to reveal or conceal the items.</p>
+                <div class="slideToggle-div"></div>
+
+                <h5 id="fade-in">Fade In</h5>
+                <button class="fade-in">.fadeIn()</button>
+                <p>animates the opacity of the matched elements.</p>
+                <div class="fade-in-div"></div>
+
+                <h5 id="fade-out">Fade Out</h5>
+                <button class="fade-out">.fadeOut()</button>
+                <p>animates the opacity of the matched elements. Once the opacity reaches 0, the display style property is set to none.</p>
+                <div class="fade-out-div"></div>
+
+                <h5 id="before">Before</h5>
+                <button class="before">.before()</button>
+                <p>Returns an element before each element in the set and old HTML value. </p>
+                <div class="before-div"></div>
+
+                <h5 id="after">After</h5>
+                <button class="after">.after()</button>
+                <p>Returns an element after each element in the set and old HTML value. </p>
+                <div class="after-div"></div>
+
+                <h5 id="append">Append</h5>
+                <button class="append">.append()</button>
+                <p>Inserts a specified contecnt as the last child of each element in the jQuery collection.</p>
+                <div class="append-div"></div>
+
+                <h5 id="html">HTML</h5>
+                <button class="html">.html()</button>
+                <p>Gets the HTML contents of the first element in the set of matched elements.</p>
+                <div class="html-div"></div>
+
+                <h5 id="attributes">Attributes</h5>
+                <button class="attr">.attr()</button>
+                <span title="Attributes Demo"></span>
+                <p>Gets the value of an attribute for the first element in the set of matched elements. Example: Click the button to show the title of this paragraph.</p>
+                <h4></h4>
+
+                <h5 id="value">Value</h5>
+                <button class="val">.val()</button>
+                <p>Get the current value of the first element in the set of matched elements. Example: Type anything on the box and click the buton after to retain what you typed in the field.</p>
+                <input type="text" value="type here...">
+                
+                
+                <h5 id="text">Text</h5>
+                <button class="text">.text()</button>
+                <p class="text-p">Click the button to show the description of .text tag.</p>
+
+                <h5 id="add-class">Add Class</h5>
+                <button class="add-class">.addClass()</button>
+                <p>Adds the class and appends it to any which may already be assigned to the elements. Example: Clicking the button will add a border property from a class "design" in the CSS.</p>
+                <div class="add-class-div"></div>
+                
+
+                </main>
+            </section>
+        </main>
+
+   </body>
+</html>

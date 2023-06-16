@@ -1,0 +1,51 @@
+*{          
+    text-align: center;
+    
+ }
+
+    form{
+        display: inline-block;
+    }
+
+    #again{
+        background-color: green;
+        color: white;
+    }
+
+    #reset{
+        background-color: red;
+        margin-right: 50px;
+        color: white;
+    }
+
+    #discount{
+        width: 300px;
+        padding: 10px;
+        background-color: #ffe599;
+        outline: dashed 2px black;
+        border-radius: 5px;
+        margin-left: 40%;
+        display: none;
+    }
+
+    #plain{
+        background-color: white;
+        outline: none;
+    }
+
+    #sorry{
+        width: 300px;
+        padding: 10px;
+        background-color: #ffe599;
+        outline: dashed 2px black;
+        border-radius: 5px;
+        margin-left: 40%;
+    }
+
+        .form-hidden {
+            display: none;
+        }
+        .form-visible {
+         display: block;
+        }
+      

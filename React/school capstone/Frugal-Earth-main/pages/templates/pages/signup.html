@@ -1,0 +1,289 @@
+
+    {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <title>Sign Up</title>
+
+<!DOCTYPE html>
+<html lang="en">
+ <title>signup</title>
+
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+     <style>
+     </style>
+
+    </head>
+
+
+
+
+     <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+
+    </head>
+
+    {% load static %}
+
+
+
+    <body style="background-color: #0d1017;">
+
+
+        <!-- A grey horizontal navbar that becomes vertical on small screens
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div class="container">
+            <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+=======
+        <!-- A grey horizontal navbar that becomes vertical on small screens -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand navbar-right" href="index.html">FrugalEarth</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav  ms-auto">
+                <li class="nav-item">
+
+                  <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+
+                  <a class="nav-link" href="{% url 'feeds' %}">Posts</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="# ">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item">
+
+                  <a class="mx-1 btn btn-outline-light w-100" href="{% url 'signin' %}">Sign in</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav!-->
+
+
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+
+
+
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://frugalearth.pythonanywhere.com/aboutus/#contactus">Contact Us</a>
+                  </li>
+
+                  <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
+
+                {% else %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+
+                {% endif %}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+
+
+
+<!--marking-->
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+            <!--this col is empty-->
+      </div>
+      <div class="col-sm-4">
+          <div class="sp">
+        <div class="signup-header">
+            <img src="{% static 'globelogo.png' %}" class="logo">
+            <h4 class="">Sign Up to FrugalEarth</h4>
+        </div>
+
+        <div class="signup-body rounded">
+
+
+
+
+             <form method="POST" action="" class="">
+       {% csrf_token %}
+
+       {% for field in form %}
+
+
+         <label for="room_name" class="form-label">{{field.label}}</label>
+         {{field}}
+
+
+       <!--{{field.label}}<br>
+         {{field}}<br>!-->
+
+
+       {% endfor %}
+
+        <div class="signup-button">
+
+        <button type="submit" class="btn btn-success" style="width: 100%">Create Account</button></div>
+
+
+               <div class="" style="display: flex; text-align: center; justify-content: space-between; color: #6c757d; margin: 0.5rem;">
+                  <p style="margin: 0;">---------------------------</p>
+                  <p style="margin: 0;">OR</p>
+                  <p style="margin: 0;">---------------------------</p>
+                </div>
+
+            <!--{% load socialaccount %}
+            <div class="googlelink" style="display:;">
+                <button type="button" class="btn-google" style="width: 100%; padding: 0.5rem; border-radius: 8px;"><img src="{% static 'google.png' %}" style="display: inline-block; width: 8%; margin-right: 0.5rem;">  Sign up with Google</button>
+            </div!-->
+
+
+            {% load socialaccount %}
+            <div class="googlelink">
+                <button type="button" class="btn-google" style="width: 100%; padding: 0.5rem; border-radius: 8px;"><img src="{% static 'google.png' %}" style="display: inline-block; width: 8%; margin-right: 0.5rem;"> <a href="{% provider_login_url 'google'%}?next=/" style="text-decoration: none; color: black;"> Sign up with Google</a></button>
+              </div>
+            <!--a href="{% provider_login_url 'google'%}?next=/">Sign up with Google</a!-->
+
+
+      </form>
+
+      </div>
+        </div>
+
+        <div class="signup-footer">
+
+        </div>
+    </div>
+
+      <div class="col-sm-4">
+            <!--this col is empty-->
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+
+                  <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href ='signin';">Sign in</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+
+
+
+
+ <div class="tab-content vh-100 align-items-center justify-content-center text-white">
+    <div class="container" style="width: 400px; font-family: 'roboto', sans-serif; font-size: 13px; ">
+
+        <img src="{% static 'image/globelogo.png' %}" class="img-responsive center-block d-block mx-auto img-fluid mt-5">
+        <h4 class="p-3 mb-0 text-center">Sign Up to FrugalEarth</h4>
+
+
+
+
+      <form method="POST" action="" class="bg-dark text-white p-3 rounded border border-dark">
+       {% csrf_token %}
+
+       {% for field in form %}
+       <div class="row">
+         <label for="room_name" class="form-label">{{field.label}}</label>
+         {{field}}
+       </div>
+
+       {% endfor %}
+        <!--div class="row">
+            <div class="col">
+                 <label for="fname" class="form-label">First Name</label>
+                 <input type="fname" class="form-control bg-dark border border-secondary text-white" id="fname" aria-describedby="emailHelp">
+                             </div>
+
+
+            <div class="col">
+                <label for="lname" class="form-label">Last Name</label>
+                <input type="lname" class="form-control bg-dark border border-secondary text-white" id="lname" aria-describedby="emailHelp">
+            </div>
+         </div!-->
+        <!--
+        <div>
+          <label for="email" class="form-label">Email Address</label>
+        {{form.email}}
+        </div>
+
+       <div>
+       <label for="username" class="form-label">Username</label>
+        {{form.username}}
+       </div>
+
+       <div>
+        <label for="password" class="form-label">Create Password</label>
+        {{form.password1}}
+       </div>
+
+       <div>
+        <label for="password" class="form-label">Confirm Password</label>
+        {{form.password2}}
+       </div> !-->
+
+        <button type="submit" class="btn btn-success w-100 mt-3">Create Account</button--!>
+      </form>
+
+      <div>
+        <a class="btn btn-success w-100 mt-3" href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+      </div>
+
+
+
+
+
+
+
+    </body>
+
+
+
+      <footer>
+
+      </footer>
+
+
+</html>

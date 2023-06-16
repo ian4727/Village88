@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Submitted entry</h1><br><br>
+        <p>Your Name(optional): <%= formData.name %></p><br>
+        <p>Course Title: <%= formData.course %></p><br>
+        <p>Given Score(1-10): <%= formData.score %></p><br>
+        <p>Reason: <br> <%= formData.reason %></p><br>
+        <a href="/"><button>Return</button></a>
+    </div>
+</body>
+</html>

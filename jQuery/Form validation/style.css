@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;    
+    /*outline: 1px dotted red;*/
+}   
+
+.container{
+    width: 1000px;
+    margin-left: 10px;
+    
+}
+
+    h1{
+        margin: 50px;
+    }
+
+    label{
+        display: block;
+        margin: 30px;
+        width: 500px;
+    }
+
+        input{
+            margin-left: 50px;
+        }
+
+        #datepicker{
+            margin-left: 28px;
+         }
+
+
+
+        

@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+
+.custom-shape-divider-bottom-1663565385 {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+overflow: hidden;
+line-height: 0;
+transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1663565385 svg {
+position: relative;
+display: block;
+width: calc(105% + 1.3px);
+height: 72px;
+transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1663565385 .shape-fill {
+fill: #F7BC00;
+}
+
+.custom-shape-divider-bottom-1663567480 {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+overflow: hidden;
+line-height: 0;
+transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1663567480 svg {
+position: relative;
+display: block;
+width: calc(105% + 1.3px);
+height: 72px;
+transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1663567480 .shape-fill {
+fill: #FEAF88;
+}
+
+.custom-shape-divider-bottom-1663567819 {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+overflow: hidden;
+line-height: 0;
+transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1663567819 svg {
+position: relative;
+display: block;
+width: calc(105% + 1.3px);
+height: 72px;
+transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1663567819 .shape-fill {
+fill: #A4D24E;
+}
+
+
+hr {
+    clear: both;
+    visibility: hidden;
+}

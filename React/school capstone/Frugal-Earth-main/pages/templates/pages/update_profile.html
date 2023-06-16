@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+ <title>Edit Profile</title>
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+
+    </head>
+    <body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="{% url 'home' %}">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+                <div class="search-bar">
+                    <form method="GET" action="{% url 'feeds' %}">
+                    <i class="bi bi-search"></i>
+                    <input type="text" name="q" id="" placeholder="What are you looking for?"/>
+                    </form>
+                </div>
+
+
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'feeds' %}">View Posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://frugalearth.pythonanywhere.com/aboutus/#contactus">Contact Us</a>
+                  </li>
+
+                  <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signout' %}">Sign Out</a>
+
+                {% else %}
+                <a type="submit" class="mx-1 btn btn-outline-light w-100" href ="{% url 'signin' %}">Sign in</a>
+
+
+                {% endif %}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+
+
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-4 editprofile">
+            <div class="current-profile">
+                <div class="edit-btn">
+                    <i class="bi bi-x-lg text-white"></i>
+                        <h5><b>Edit Profile</b></h5>
+                        <a href="{{request.META.HTTP_REFERER}}"><button type="button" class="btn-close"></button></a>
+                </div>
+
+                <div class="editcurrent">
+                    <div class="edit-photo">
+                        <img src="{{request.user.avatar.url}}">
+                    </div>
+
+                    <div class="account-info">
+                        <h6>@{{user.username}}</h6>
+                        <small>{{user.name}}</small>
+                    </div>
+                </div>
+
+                   <div class="edit-body">
+
+                    <form class="form" action="" method="POST" enctype="multipart/form-data">
+                         {% csrf_token %}
+
+                          {% for field in form %}
+<div>
+                  <label for="fname" class="form-label">{{field.label}}</label><br>
+                  {{field}}<br>
+                    {% endfor %}
+
+</div>
+
+
+                </div>
+
+
+
+
+            </form>
+
+<div class="edit-footer" style="text-align: center; width: 100%;">
+<button type="submit" class="btn btn-success" value="Save Changes">Save Changes</button>
+</div>
+
+
+                </div>
+
+
+
+          </div>
+
+
+
+
+
+
+                <div class="col-sm-4">
+                 </div>
+        </div>
+</div><!--end of container-->
+
+
+
+                              <!--label for="fname" class="form-label">First Name</label>
+                              <input type="fname" class="form-control" id="fname" placeholder="Aaron">
+                            </div>
+
+                            <div class="col">
+                              <label for="lname" class="form-label">Last Name</label>
+                              <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                            </div>
+                          </div><!---end of row-
+
+                          <label for="username" class="form-label">Username</label>
+                          <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+
+                          <label class="form-label" for="customFile">Upload Image</label>
+                          <input type="file" class="form-control" id="customFile" />
+                    </form>
+                </div>
+
+                <div class="edit-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-success">Save Changes</button>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+            </body>
+    </html>
+
+<!--
+    <div>
+    <form method="POST" action="" >
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" value="Apply changes"/>
+
+
+    </form>
+    <button>
+            <a href="{% url 'user-profile' user.id %}">Cancel
+    </a>
+    </button>
+
+</div>!-->
+
+
+<!-- The Modal!
+    <div class="modal" id="myModalEdit">
+     <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header !
+        <div class="modal-header">
+          <h6 class="modal-title">Edit Profile</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body !
+        <div class="modal-body">
+
+          <form method="POST" enctype="multipart/form-data" action="" class="edit-info">
+            {% csrf_token %}
+
+            <div class="acc-preview">
+              <div class="acc-photo">
+                <img src="{{request.user.avatar.url}}">
+              </div>
+            </div>
+
+            <div class="account-info">
+                <h6>{{user.username}}</h6>
+                <small>{{user.name}}</small>
+            </div>
+
+
+
+
+
+            {% for field in form %}
+              <div class="row">
+                <div class="col">
+                  <label for="fname" class="form-label">{{field.label}}</label>
+                  {{field}}
+                </div><!--col!
+                {% endfor %}
+              </div><!--row
+                <!--
+                <div class="col">
+                  <label for="lname" class="form-label">Last Name</label>
+                  <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                </div>
+              </div><!---end of row!
+
+              <label for="username" class="form-label">Username</label>
+              <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+
+              <label class="form-label" for="customFile">Upload Image</label>
+              <input type="file" class="form-control" id="customFile" />!
+
+
+
+
+
+          </form>
+
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="Save Changes"/>
+          </div>
+          <button>
+              <a href="{% url 'user-profile' user.id %}">Cancel</a>
+          </button>
+
+
+
+
+        </div><!--modalBody-->
+
+        <!-- Modal footer !
+
+
+
+      </div><!--modalContent
+
+      </div>
+      </div>

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    .resize{
+        width: 50px;
+    }
+
+    img{
+        margin: 30px;
+    }
+
+    .photo{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hiyah{
+        position: fixed;
+        top: 300px;
+    }

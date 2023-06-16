@@ -1,0 +1,26 @@
+*{
+  /*outline: 1px dotted red;*/
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /*text-align: center;*/
+}
+
+  .order{
+    padding: 30px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+  }
+
+  .qty{
+    display: inline-block;
+    width: 60px;
+  }
+ 
+  .desc{
+    display: inline-block;
+  }

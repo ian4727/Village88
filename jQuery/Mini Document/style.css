@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+    aside, main{
+        display: inline-block;
+    }
+
+    aside{
+        vertical-align: top; 
+        padding: 2% 5%;
+        height: 100%;
+        width: 160px;
+        z-index: 1;
+        position: fixed;
+        margin-right: 20%;
+    }
+
+        li{
+            list-style: none;
+            line-height: 30px;
+        }
+
+        a{
+            color: black;
+        }
+
+    main{
+        width: 60%;
+        height: 100%;
+        margin: 0 100px 0 200px;
+        padding: 0 0 0 50px;
+        border-left: 2px solid black;
+    }
+
+        h5, .p-toggle{
+            margin: 20px 200px;
+            width: 500px;
+        }
+
+        p{
+            display: inline-block;
+            margin: 0 10px;
+            width: 60%;
+            height: 40%;
+            vertical-align: top;
+        }
+
+            .hidden, #p-toggle-hidden, .text-div{
+                display: none;
+                text-align: center;
+                color: red;
+            }
+
+            .html-div{
+                display: inline-block;
+                width: 0px;
+                height: 0px;
+                background-color: none;
+                margin: 20px 200px;
+            }    
+
+        div, .add-class-div{
+            width: 50px;
+            height: 30px;
+            background-color: blue;
+            margin: 20px 200px;
+        }
+
+            .slideDown-div, .fade-in-div, .slideToggleDiv{
+                display: none;
+            }
+
+            .design{
+                border: 5px solid yellow;
+            }
+
+            
+
+        
+        
+
+        
+        
+        

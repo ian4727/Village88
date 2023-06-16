@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 1px dotted red;
+}
+
+    .container{
+        display: inline-block;
+        width: 1400px;
+        height: 100px;
+        font-family: 'PT Sans', sans-serif;
+        
+    }
+
+        nav{
+            background-color: #131921;
+            display: inline-block;
+            color: white;
+            width: 100%;
+        }
+
+            .logo, .img-cart{
+                position: relative;
+                top: 15px;
+            }
+
+            a{
+                text-decoration: none;
+                color: white;
+                position: relative;
+                bottom: 10px;
+            }
+
+            p{
+                display: inline-block;
+                position: absolute;
+                top: 10px;
+                font-size: 10px;
+            }
+
+                p-nav{
+                    width: 20px;
+                    display: block;
+                }
+
+            form{
+                display: inline-block;
+                width: 700px;
+                border-radius: 10px;
+                height: 60px;
+                outline: 1px dotted green;
+                
+                
+            }
+
+                input{
+                    width: 500px;
+                    height: 35px;
+                    position: relative;
+                    bottom: 10px;
+                    
+                }
+
+                .all{
+                    font-size: 20px;
+                    position: relative;
+                    bottom: 8px;
+                    background-color: #dadada;
+                    padding: 5px;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    margin-left: 20px;
+                    height: 40px;
+                    color: black
+
+                }
+
+                .search{
+
+                    height: 40px;
+                    position: relative;
+                }   
+                 
+                select{
+                    background: transparent;
+                    color: white;
+                }
+
+                    .select-en{
+                        position: relative;
+                        bottom: 10px;
+                        right: 40px;
+                    }
+
+                    .select-account{
+                        position: relative;
+                        bottom: 10px;
+                        
+                    }
+
+                .a-cart{
+                    margin: 0 0 0 60px;               
+                }
+
+        header{
+            background-color: #232f3e;
+            height: 30px;
+        }
+
+            li{
+                display: inline-block;
+                color: white;
+                margin-left: 20px;
+            }
+
+            .p-header{
+                font-size: 15px;
+                color: white;
+                position: absolute;
+                top: 75px;
+                left: 900px;
+            }
+
+
+            .main-img-0{
+                width: 1400px;
+  
+            }
+
+            .main-li{
+                width: 270px;
+                height: 350px;
+                color: black;
+                position: relative;
+                bottom: 200px;
+                left: 20px;
+                background-color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .main-img{
+                width: 200px;
+                height: 200px;
+                z-index: 1;
+                margin: 20px 10px 70px 10px;
+            }
+
+            .main-a{
+                color: #72bbd1;
+                font-size: 10px;
+                margin-right: 180px;
+            }
+
+           
+
+           

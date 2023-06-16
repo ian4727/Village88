@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form Revisited</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script type ="text/javascript">
+        $(document).ready(function(){
+            const socket = io();
+
+            $('#feedback-form').submit(function(event){
+                event.preventDefault();
+                const formData = {
+                    fname: $('#name').val(),
+                    course: $('#course').val(),
+                    score: $('#score').val(),
+                    reason: $('#reason').val()
+                };
+                socket.emit('posting_form', formData);    
+            });
+
+            socket.on('updated_message', function(message){
+                console.log(message);
+                $('#message-container').html(message);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="message-container"></div>
+
+    <div id="container">
+        <h1>Feedback Form</h1><br><br>
+        <form id="feedback-form" action="" method="POST">
+            Your Name (optional):<br>
+            <input id="name" type="text" name="name"><br><br>
+            Course Title:<br>
+            <select id="course"name="course">
+                <option>JavaScript</option>
+                <option>PHP</option>
+                <option>Web Fundamentals</option>
+            </select><br><br>
+            Given Score (1-10):<br>
+            <select id="score" name="score">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select><br><br>
+            Reason:<br>
+            <textarea id="reason" name="reason"></textarea><br><br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

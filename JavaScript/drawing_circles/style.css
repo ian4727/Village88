@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+    div{
+        display: inline-block;
+        margin: 20px;
+    }
+
+        #container{
+            position:absolute;
+            top:150px;
+            left:75px;
+            width:200px;
+            height:200px;
+            border-radius:100px;
+        }
+
+        #pink{
+            width: 80px;
+            height: 30px;
+            background-color: #ffc0cb;
+            border-radius: 5px;
+        }
+
+        #purple{
+            width: 80px;
+            height: 30px;
+            background-color: #ca45ca;
+            border-radius: 5px;
+        }
+
+        #blue{
+            width: 80px;
+            height: 30px;
+            background-color: #6868d4;
+            border-radius: 5px;
+        }
+
+        #reset{
+            width: 80px;
+            height: 30px;
+            outline: 1px solid #7fffd4;
+            color: rgb(243, 59, 59);
+            text-align: center;
+            vertical-align: top;
+            border-radius: 5px;
+        }

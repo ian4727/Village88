@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background Chooser</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+        <script>
+            $(document).ready(function(){
+                $('#main_box').click(function(){
+                    $(this).css("background", "lightgray");
+                    $(this).children().css("border", "none");
+                })
+                $('.mini_boxes').click(function(event){
+                    event.stopPropagation();
+                    $(this).css("border", "2px solid yellow");
+                    var bg = $(this).attr("src");
+                    $(this).parent().css("background-image", "url("+bg+")");
+                    $(this).siblings().css("border", "0");
+                })
+            });
+        </script>
+        <style>
+                #main_box {
+                    background-color: lightgray;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    padding: 10px;
+                }
+                #main_box img {
+                    display: block;
+                    width: 200px;
+                    height: 100px;
+                    margin: 10px 0 15px 10px;
+                }
+                h1 {
+                    text-align: center;
+                    margin: 30px;
+                    font-family: Verdana;
+                }
+                .design{
+                    border: 5px solid yellow;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>Background Chooser</h1>
+        <div id="main_box">
+            <img src="v745rRo.gif" class="mini_boxes" alt="Background">
+            <img src="wA908AV.gif" class="mini_boxes" alt="Background">
+            <img src="zW8idqj.gif" class="mini_boxes" alt="Background">
+            <img src="doJRA0o.gif" class="mini_boxes" alt="Background">
+        </div>
+    </body>
+    </html>

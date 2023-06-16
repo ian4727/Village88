@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Gochi Hand', cursive;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+    justify-content: center;
+}
+
+  .card{
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.0); 
+    font-size: 50px;
+  }
+
+  .label, inline-radio-2{
+    width: 300px;
+  }
+
+  .tasksContainer{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    margin: 10px;
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    overflow-y: auto;
+  }
+
+  Form{
+    display: inline-block;
+  }
+
+  .radios, h4{
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .tasks{
+    margin: 10px;
+  }
+
+  .tasksContainer{
+    display: inline-block;
+  }
+
+ 

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    button{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: rgb(204, 5, 171);
+        color: white;
+    }

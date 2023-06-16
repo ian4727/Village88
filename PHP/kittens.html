@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kittens</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function(){
+            $.get("https://fakerapi.it/api/v1/images?_quantity=100&_type=kittens", function(res){
+                var html_str = "<h1>Nyaaa~</h1>";
+                html_str += "<div>";
+                for(var i=0; i<res.data.length; i++) {
+                    html_str += "<img src='" + res.data[i].url + "' alt='kitten'>";
+                }
+                html_str += "</div>";
+                $("#kittens").html(html_str);
+            }, "json");
+        });
+    </script>
+</head>
+<body>
+    <div id="kittens"></div>
+</body>
+</html>

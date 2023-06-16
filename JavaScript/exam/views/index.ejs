@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Exam</title>
+</head>
+<body> 
+    <script>
+        const socket = io();
+        const names = [];
+        let clients = [];
+      
+        $(document).ready(function() {
+          const name = prompt("What is your name?");
+          names.push(name);
+          socket.emit("join", name);
+      
+          $("form").submit(function (e) {
+            e.preventDefault();
+            const message = $("#message").val();
+            const recipient = $("#client-select").val();
+            $("#message").val("");
+            sendMessage(); // Call sendMessage function here
+            socket.emit("chat_message", { sender: name, message: message, recipient: recipient });
+          });
+      
+      
+          socket.on("private_message", function(data) {
+            if (data.recipient === name || data.sender === name) {
+              $("#messages").append("<p><strong>" + data.sender + " (private): </strong>" + data.message + "</p>");
+            }
+          });
+      
+          socket.on("chat_message", function(data) {
+            if (!data.recipient || data.recipient === "Everyone" || data.recipient === name) {
+              $("#messages").append("<p><strong>" + data.sender + ": </strong>" + data.message + "</p>");
+            }
+          });
+      
+          socket.on("user_joined", function(users) {
+            const userList = users.join(", ");
+            console.log("Users: " + userList);
+            clients = users.filter(user => user !== name);
+            updateClientList(clients);
+            $("#participants").empty();
+            $("#participants").append("<h4>Participants</h4>");
+            users.forEach(function(user) {
+              if (user === name) {
+                user = "You";
+              }
+              $("#participants").append("<p>" + user + "</p>");
+            });
+          });
+      
+          socket.on("user_left", function(users) {
+            const userList = users.join(", ");
+            console.log("Users: " + userList);
+            clients = users.filter(user => user !== name);
+            updateClientList(clients);
+            $("#participants").empty();
+            $("#participants").append("<h4>Participants</h4>");
+            users.forEach(function(user) {
+              if (user === name) {
+                user = "You";
+              }
+              $("#participants").append("<p>" + user + "</p>");
+            });
+          });
+      
+          $("#send button").click(function() {
+            sendMessage();
+          });
+      
+          $("#client-select").change(function() {
+            const recipient = $(this).val();
+            $("#recipient-name").text(recipient); // Update recipient name on the UI
+          });
+      
+          function updateClientList(clientList) {
+            let select = document.getElementById("client-select");
+            while (select.options.length > 1) {
+              select.remove(1);
+            }
+            for (let i = 0; i < clientList.length; i++) {
+              let option = document.createElement("option");
+              option.text = clientList[i];
+              select.add(option);
+            }
+          }
+      
+          function sendMessage() {
+            const message = $("#message").val();
+            const recipient = $("#client-select").val();
+            if (recipient === "Everyone") {
+              socket.emit("chat_message", { sender: name, message: message });
+            } else {
+              socket.emit("private_message", { sender: name, message: message, recipient: recipient });
+            }
+            $("#message").val("");
+          }
+        });
+      </script>
+      
+      
+      <main>
+        <div id="chatroom">
+          <div id="messages"></div>
+        </div>
+      
+        <div id="participants">
+          <h4>Participants</h4>
+        </div>
+      </main>
+      
+      <div id="send">
+        <input type="text" placeholder="Say something" id="message">
+        <select id="client-select">
+          <option value="Everyone">Everyone</option>
+        </select>
+      
+        <button>Send</button>
+      </div>
+      
+    </div>
+</body>
+</html>

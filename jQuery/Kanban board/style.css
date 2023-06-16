@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}   
+
+.container{
+    width: 1200px;
+    padding: 50px 0 50px 50px;
+    border: 5px solid yellow; 
+}
+
+    div{
+        display: inline-block;
+        width: 200px;
+        padding: 10px;
+        vertical-align: top;
+        border: 1px solid yellow; 
+    }
+
+        h3{
+        width: 150px;
+        padding: 5px;
+        text-align: center;
+        }
+
+            img{
+                width: 30px;
+                border-radius: 50px;
+                position: relative;
+                left: 8px;
+                bottom: 5px;
+                vertical-align: top;
+                margin-left: 15px;   
+            }
+
+            #sortable1, #sortable2, #sortable3, #sortable4, #sortable5{
+                border: 1px solid #eee;
+                width: 200px;
+                min-height: 20px;
+                list-style-type: none;
+                margin: 0;
+                padding: 5px 0 0 0;
+                float: left;
+                margin-right: 10px;
+              }
+              
+              #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li{
+                margin: 0 5px 5px 5px;
+                padding: 5px;
+                font-size: 1.2em;
+                width: 180px;
+              }
+  

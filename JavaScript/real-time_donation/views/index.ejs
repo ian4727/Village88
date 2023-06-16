@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Donation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function() {
+            const socket = io();
+            socket.on('updateCash', function(cashDonation) {
+                $('#cashDonation').text(cashDonation);
+            });
+            $('#donateBtn').click(function() {
+                socket.emit('donate');
+            });
+            $('#redeemBtn').click(function() {
+                socket.emit('redeem');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Total Cash Donation: $<span id="cashDonation"></span></h1>
+    <p>Give according to one's capacity,</p>
+    <p>Take according to one's need</p>
+    <div>
+    <button id="donateBtn">Donate $10</button>
+    <button id="redeemBtn">Redeem $10</button>
+    </div>
+</body>
+</html>

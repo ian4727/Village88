@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    body{
+        background-image: url('./assets/assets/images/marek-piwnicki-Nz6oLd4-iK0-unsplash.jpg');
+        background-size: cover;
+    }
+

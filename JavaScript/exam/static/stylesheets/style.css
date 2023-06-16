@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    html,
+    body {
+    height: 100%;
+    margin: 0;
+    }
+
+    main{
+        min-height: calc(100% - 50px);
+        margin-bottom: -50px;
+    }
+
+        #chatroom{
+            width: 60%;
+            padding: 20px;
+            
+        }
+
+        div{
+            display: inline-block;
+            vertical-align: top;
+            margin: 40px;
+        }
+
+        #participants{
+            
+            width: 20%;
+            min-height: 300px;
+            outline: 1px solid black;
+            padding: 10px;
+        }
+
+            h4{
+                margin-bottom: 10px;
+            }
+
+        #send{
+            height: 50px;
+            width: 90%;
+        }
+
+            input{
+                width: 50%;
+                height: 50px;
+            }
+
+            select,
+            button{
+                width: 200px;
+                height: 50px;
+            }
+
+            button{
+                margin-left: 20px;
+            }
+
+            
+
+    

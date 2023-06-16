@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    width: 970px;
+    background-color: #2e2e2e;
+    font-family: sans-serif;
+    
+}
+
+    nav{
+        vertical-align: middle;
+        height: 30px;
+        background-color: #8892bf;
+        
+    }
+        .logo1{
+            width: 30px;
+            margin: 9px 20px 5px 60px;
+            
+        } 
+        .logo2{
+            width: 35px;
+            margin: 10px 320px 5px 0px;
+            vertical-align: top;
+        }
+        .navigation{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 4px;
+        }
+        .list1{
+            display: inline-block;
+            font-size: 10px;  
+            padding: 0px 5px;
+            
+        }
+        a{
+            vertical-align: middle;
+            text-decoration: none;
+            color: white;
+            
+            height: 30px;
+        }
+        form{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 5px;
+        }
+            input{
+                width: 215px;
+                height: 10px;
+                
+            }
+    header{
+        height: 30px;
+    }
+        .list2{
+            font-size: 9px; 
+            display: inline-block;
+            padding: 0px 10px;
+        }
+        ul{
+            display: inline-block;
+        }   
+        .headul{
+            margin: 3px 500px 3px 60px;
+        }
+
+    
+    
+    article{
+        display: inline-block;
+        width: 670px;
+        background-color: white;
+        margin-left: 15px;
+        padding-bottom: 10px;
+        vertical-align: top;
+    }
+        .section1{
+            
+            width: 635px;
+            height: 40px;
+            margin: 0px 3px 0px 15px;
+            padding: 2px 0px 30px 0px;
+            border-bottom: 1px dotted black;
+        }
+        h4{
+            display: inline-block;
+            vertical-align: top;
+            margin: 45px 320px 5px 0px;
+        }
+        .settings{
+            display: inline-block;
+            margin: 5px 0px 24px 0px;
+        }
+            .list3{
+                display: inline-block;
+                font-size: 7px;
+                color: #92acc5;
+                
+                margin-left: 22px;
+                
+            }
+            select{
+                width: 70px;
+                display: inline-block;
+                font-size: 9px;
+                
+            }
+            h7{
+                
+                font-size: 10px;
+                height: 5px;}
+
+                    .link1{
+                        color: #92acc5;
+                        font-size: 8px;
+                    }
+            h5{
+                width: 635px;
+                
+                margin: 0px 3px 0px 15px;
+                padding: 25px 0px 5px 0px;
+                border-bottom: 1px dotted black;
+            }
+
+            .section2{
+                width: 635px;
+                
+                margin: 0px 3px 0px 15px;
+                padding: 20px 0px 5px 0px;
+                border-bottom: 1px dotted black;
+            }
+                .link2{
+                    text-decoration: underline;
+                    color: #92acc5;
+                    
+                }
+
+                .list4{
+                    margin-left: 15px;
+                    font-size: 10px;
+                    line-height: 13px;
+                }
+
+                p{
+                    font-size: 10px;
+                    margin-top: 20px;
+                }
+
+                
+
+                    h6{
+                        display: inline-block;
+                        font-size: 12px;
+                        margin: 25px 430px 0px 0px;
+                        color: #6e3269;
+                    }
+
+                    .add{
+                        width: 10px;
+                       
+                    }
+
+                    .plus{
+                        color: #92acc5;
+                        font-size: 9px;
+                    }
+
+            .section3{
+                margin: 0px 3px 0px 15px;
+                padding: 20px 0px;
+            }
+    aside{
+        display: inline-block;
+        color: white;
+        
+    }
+        #link3{
+            color: #b44f86;
+            
+        }
+
+        .list5{
+            width: 176px;
+            
+            border-bottom: 1px dotted white;
+            font-size: 9px;
+            list-style: none;
+            padding: 2px 0px 2px 10px;
+        }    
+
+        .list6{
+            width: 185px;
+            padding: 5px 0px;
+            border-bottom: 1px dotted #b44f86;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        .sidebar{
+            width: 185px;
+            font-size: 12px;
+            border-bottom: 1px dotted white;
+            padding: 0px 0px 5px 0px;
+        }
+
+footer{
+    width: 970px;
+    height: 30px;
+    display: inline-block;
+    padding: 35px 100px 0px 35px;
+}    
+
+    .list7{
+        display: inline-block;
+        font-size: 10px;
+        color: white;
+        margin-right: 8px;
+    }
+
+    .foot{
+        
+        margin-right: 100px;
+    }
+    
+
+
+
+                
+
+
+
+

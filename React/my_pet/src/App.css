@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+  .card{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.0); 
+  }
+
+  .callout-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .pet{
+    width: 200px;
+  }

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Pacman Demo </title>
+    <style type="text/css">
+
+        body{
+            background-color: black;
+        }
+
+        div.row div{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+
+        div.bricks{
+            background-color: blue;
+        }
+
+        div.coins{
+            background: url("images/coins.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        div.pacman{
+            background: url("images/right.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="pacman"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="coins"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <div class="row">
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+        <div class="bricks"></div>
+    </div>
+
+    <script type ="text/javascript">
+        window.onload = function what(){
+        var output = "";
+        document.getElementById('world').innerHTML = output;
+        }
+    </script>
+
+    <script type="text/javascript">
+       
+    
+
+        var world = [
+            [2,2,2,2,2,2,2,2,2,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,2,1,1,1,1,1,1,1,2],
+            [2,2,2,2,2,2,2,2,2,2],
+        ];
+
+        function displayWorld(){
+            var output = "";
+
+            for(var i=0; i<world.length; i++){
+                output += "\n<div class='row'>";
+
+                for(var j=0; j<world[i].length; j++){
+                    //output = output + "\t" + world[i][j];
+                    if(world[i][j] == 2){
+                        output += "\n\t<div class='bricks'></div>";
+                    }else if(world[i][j] == 1){
+                        output += "\n\t<div class='coins'></div>";
+                    }else if(world[i][j] == 0){
+                        output += "\n\t<div class='empty'></div>";
+                    }
+                }
+                output += "\n</div>";
+
+            }
+            //console.log(output);
+            
+            //document.getElementById("world").innerHTML = output;
+        }
+
+        displayWorld();
+   
+    </script>
+
+    
+
+</body>
+</html>

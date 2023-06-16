@@ -1,0 +1,48 @@
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logContainer{
+  width: 750px;
+  height: 500px;
+  background-image: url('./assets/images/callout.jpg');
+  background-size: cover;
+  border-radius: 50px;
+  opacity: 0.8;
+  text-align: center;
+  color: white;
+  padding: 80px 50px;
+  overflow: auto;
+}
+
+.balance{
+  background-image: url('./assets/images/card.jpg');
+  background-size: cover;
+  border-radius: 50px;
+  width: 450px;
+  height: 300px;
+  opacity: 0.8;
+  text-align: center;
+  color: white;
+  padding: 80px 50px;
+}
+
+.game{
+  width: 100px;
+  
+}
+
+.bet{
+  display: inline-block;
+  
+}
+
+.btn{
+  width: 200px;
+  margin: 20px;
+}

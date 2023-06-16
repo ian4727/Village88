@@ -1,0 +1,209 @@
+{% load static %}
+
+
+<!--
+<div>
+
+    <h5>{{room_count}} Posts available</h5>
+    <hr>
+    {%for room in rooms %}
+        <div>
+            {% if request.user == room.host %}
+            <a href="{% url 'update-room' room.id %}">Edit</a>
+            <a href="{% url 'delete-room' room.id %}">Delete</a>
+            {% endif %}
+
+            <h5><a href="{% url 'room' room.id %}">{{room.name}}</a><h5>
+            <a href="{% url 'user-profile' user.id %}">@{{room.host.username}}</a>
+            <div>
+                <small>{{room.category.name}}</small>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>!-->
+
+
+<!--h5>{{room_count}} Posts available</h5!-->
+
+    {%for room in rooms %}
+
+    <div class="feed">
+        <div class="head">
+
+            <div>
+
+
+
+                <!--{% if room.image %}!-->
+                <div class="photo">
+                    <img src="{{room.image.url}}">
+                </div>
+                <!--{% endif %}!-->
+
+                <div>
+                 <h3>{{room.name}}<h3>
+                </div>
+
+                <div>
+                    <style>
+                        hr {
+                            clear: both;
+                            visibility: hidden;
+                           }
+
+                        small{
+                            font-size: 0.8rem;
+                            color: none;
+                             }
+                    </style>
+
+                    <hr>
+                    <a href="{% url 'room' room.id %}">
+                    <p>{{room.notes|truncatechars:70}}</p>
+                    </a>
+
+                    <hr>
+                    <div><p>Location: {{room.location}}</p></div>
+
+                    <hr>
+                    <div><p>Condition: {{room.condition}}</p></div>
+
+                    <hr>
+                    <div><p>Quantity: {{room.quantity}}</p></div>
+                </div>
+            </div>
+
+        </div><!--head-->
+
+
+        <div class="action-buttons">
+            <div class="interaction-buttons">
+                <hr>
+                    <a href="{% url 'room' room.id %}">
+                    <small class="bi bi-chat">View thread</small> </a>
+
+                    {% if request.user == room.host %}
+
+                    <a href="{% url 'update-room' room.id %}">
+                    <small class="edit">Update</small></a>
+
+                    <a href="{% url 'delete-room' room.id %}"><small>Delete</small>
+                    {% endif %}
+
+                    <!--<div class="bookmark">
+                        <span><i class="bi bi-bookmark"></i></span>
+                    </div>!-->
+            </div><!--interactionbuttons-->
+        </div><!--actionbuttons-->
+
+        <div>
+        {% if room.host.id %}
+             <div class="profile-photo">
+              <img src="{{room.host.avatar.url}}"/>
+             </div>
+
+             <a href="{% url 'user-profile' room.host.id %}" class="user"><h6>@{{room.host.username}}</h6></a>
+
+
+        {% endif %}
+        </div>
+
+
+
+
+         <div class="info">
+            <small>{{room.created|timesince}} ago</small>
+        </div><!--info-->
+
+
+
+
+
+
+
+
+
+
+<!--
+  <div class="feed">
+                <div class="head">
+
+                    <h5>@{{room.host.username}}</h5>
+                <div class="user">
+
+                    <a href="{% url 'user-profile' user.id %}"
+                     <div class="profile-photo">
+                        <img src="{{room.host.avatar.url}} />
+                     </div>
+                    </a>
+
+                </div>
+
+
+
+
+
+                <div>
+                <small><a href="{% url 'delete-room' room.id %}">Delete</a></small>
+                </div>
+
+                <div>
+                <small class="edit"><a href="{% url 'update-room' room.id %}">Update</a></small>
+                </div>
+
+
+
+
+             </div>
+                <div class="photo">
+                    <img src="{{request.room.image.url}}"/>
+                </div>
+
+                <div>
+                    <div>
+                    <h3>{{room.name}}<h3>
+                    </div>
+                        <p>{{room.notes}}</p>
+                        <p>Location: {{room.location}}</p>
+                        <p>Condition: {{room.condition}}</p>
+                        <p>Quantity: {{room.quantity}}</p>
+                    </div>
+
+                <div>
+                    <h6>{{room.category.name}}</h6>
+                </div>
+
+                <div class="action-buttons">
+                    <div class="interaction-buttons">
+
+                        <span>
+                            <a href="{% url 'room' room.id %}">
+                            <i class="bi bi-chat"></i>  View thread </a>
+                        </span>
+
+
+
+                    </div>
+
+                    <div class="bookmark">
+                        <span><i class="bi bi-bookmark"></i></span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="info">
+
+                    <small>{{room.created|timesince}} ago</small>
+                </div>
+
+
+            </div><!-->
+
+
+    </div><!--feed-->
+    {% endfor %}

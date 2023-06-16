@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    min-height: 700px;
+}
+
+    main{
+        width: 1000px;
+        height: 200px;
+        padding: 70px 150px;
+        
+    }
+
+        img{
+            width: 10%;
+            height: 100px;
+            margin: 5px;
+        }

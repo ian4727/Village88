@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px dotted red;
+}  
+
+    #piano{
+        margin: 10%;
+        padding: 80px 10px 10px 10px;
+        background-color: black;
+        width: 585px;
+        height: 250px;
+        position: relative; 
+    }
+    
+    .note{
+        display: inline-block;
+        width: 80px;
+        height: 230px;
+        background-color: beige;
+        outline: 1px solid black;
+    }
+    

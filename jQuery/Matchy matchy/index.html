@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Matchy Matchy</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script>
+        $(document).ready(function() {
+            $('img').on('click', function(){
+            let src = $(this).attr('src');
+            let altSrc = $(this).attr('data-alt-src');
+        
+            $(this).attr('src', altSrc);
+            $(this).attr('data-alt-src', src);
+            })
+        });
+      </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <main>
+                <div class="row">
+                    <img class="1" src='question-mark.png' data-alt-src='avocado.jpg' alt="Avocado">
+                    <img class="2" src='question-mark.png' data-alt-src='carrot.jpg' alt="Carrot">
+                    <img class="3" src='question-mark.png' data-alt-src='orange.jpg' alt="Orange">
+                    <img class="4" src='question-mark.png' data-alt-src='pineapple.jpg' alt="Pineapple">
+                </div>
+                <div class="row">
+                    <img class="5" src='question-mark.png' data-alt-src='strawberry.jpg' alt="Strawberry">
+                    <img class="6" src='question-mark.png' data-alt-src='watermelon.jpg' alt="Watermelon">
+                    <img class="1" src='question-mark.png' data-alt-src='avocado.jpg' alt="Avocado">
+                    <img class="2" src='question-mark.png' data-alt-src='carrot.jpg' alt="Carrot">
+                </div>
+                <div class="row">
+                    <img class="3" src='question-mark.png' data-alt-src='orange.jpg' alt="Orange">
+                    <img class="4" src='question-mark.png' data-alt-src='pineapple.jpg' alt="Pineapple">
+                    <img class="5" src='question-mark.png' data-alt-src='strawberry.jpg' alt="Strawberry">
+                    <img class="6" src='question-mark.png' data-alt-src='watermelon.jpg' alt="Watermelon">
+                </div>
+
+            
+            </main>
+        </div>
+
+    </body>
+</html>

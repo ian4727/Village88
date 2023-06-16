@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+    #container{
+        padding: 50px;
+        width: 100%;
+        min-height: 800px;
+        background-color: rgb(218, 192, 196);
+    }
+
+        h1{
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            color: rgb(3, 3, 97);
+        }
+
+        h2{
+            margin: 20px 0;
+            color: rgb(3, 3, 97);
+        }
+
+        p{
+            color: rgb(88, 84, 84);
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        button{
+            padding: 5px;
+            border-radius: 5px;
+            border: gray;
+            color: rgb(88, 84, 84);
+            background-color: rgb(204, 149, 158);
+
+        }

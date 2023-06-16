@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    min-height: 700px;
+    background-color: pink;
+}
+
+    main{
+        width: 600px;
+        height: 200px;
+        padding: 70px 150px;
+        
+    }
+
+        img{
+            width: 20%;
+            height: 120px;
+            
+        }
+
+    

@@ -1,0 +1,248 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+ <title>Edit Profile</title>
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="index.html">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+              <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="search" name="" id="" placeholder="What are you looking for?">
+             </div>
+
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup.html';">Log Out</button>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-4 editprofile">
+            <div class="current-profile">
+                <div class="edit-btn">
+                    <h5><b>Edit Profile</b></h5>
+                    <a href="profile.html"><button type="button" class="btn-close"></button></a>
+                </div>
+
+                <div class="editcurrent">
+                    <div class="edit-photo">
+                        <img src="static/image/profile.jpg">
+                    </div>
+                    <div class="account-info">
+                        <h6>celeste.francisco.1441</h6>
+                        <small>Aaron Ojo Sales</small>
+                    </div>
+                </div>
+
+                <div class="edit-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col">
+                              <label for="fname" class="form-label">First Name</label>
+                              <input type="fname" class="form-control" id="fname" placeholder="Aaron">
+                            </div>
+
+                            <div class="col">
+                              <label for="lname" class="form-label">Last Name</label>
+                              <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                            </div>
+                          </div><!---end of row-->
+
+                          <label for="username" class="form-label">Username</label>
+                          <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+
+                          <label class="form-label" for="customFile">Upload Image</label>
+                          <input type="file" class="form-control" id="customFile" />
+                    </form>
+                </div>
+
+                <div class="edit-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-success">Save Changes</button>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+            </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+ <title>Edit Profile</title>   
+    <head>
+      <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap 5.1.2-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="static/main.css">
+
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container">
+              <a class="navbar-brand navbar-right" href="index.html">FrugalEarth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+              <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="search" name="" id="" placeholder="What are you looking for?">
+             </div>
+
+        
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+                 
+                  <li class="nav-item">
+                    <button type="submit" class="mx-1 btn btn-outline-light w-100" onclick="location.href = 'signup.html';">Log Out</button>
+                  </li>        
+                </ul>
+              </div>
+          
+            </div>
+          </nav>
+          <!--end of navbar-->
+
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+    
+        <div class="col-sm-4 editprofile">
+            <div class="current-profile">
+                <div class="edit-btn">
+                    <h5><b>Edit Profile</b></h5>
+                    <a href="profile.html"><button type="button" class="btn-close"></button></a>
+                </div>
+               
+                <div class="editcurrent">
+                    <div class="edit-photo">
+                        <img src="static/image/profile.jpg">
+                    </div>
+                    <div class="account-info">
+                        <h6>celeste.francisco.1441</h6>
+                        <small>Aaron Ojo Sales</small>
+                    </div>
+                </div>
+    
+                <div class="edit-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col">
+                              <label for="fname" class="form-label">First Name</label>
+                              <input type="fname" class="form-control" id="fname" placeholder="Aaron">
+                            </div>
+              
+                            <div class="col">
+                              <label for="lname" class="form-label">Last Name</label>
+                              <input type="lname" class="form-control" id="lname" placeholder="Sales">
+                            </div>
+                          </div><!---end of row-->
+            
+                          <label for="username" class="form-label">Username</label>
+                          <input type="username" class="form-control" id="username" placeholder="celeste.francisco.1441">
+                              
+                          <label class="form-label" for="customFile">Upload Image</label>
+                          <input type="file" class="form-control" id="customFile" />
+                    </form>
+                </div>
+    
+                <div class="edit-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-success">Save Changes</button>
+                </div>
+    
+    
+    
+                
+    
+    
+    
+    
+    
+            </div>
+        </div>
+    
+    
+        <div class="col-sm-4">       
+        </div>
+    </div>
+ </div>
+                
+
+
+
+
+
+
+            </body>
+>>>>>>> 840bf37d3ca46419406fb7ae06d5a6d9ec637024
+    </html>

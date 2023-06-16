@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Feedback Form</h1><br><br>
+        <form action="/result" method="post">
+            Your Name (optional):<br>
+            <input type="text" name="name"><br><br>
+            Course Title:<br>
+            <select name="course">
+                <option>JavaScript</option>
+                <option>PHP</option>
+                <option>Web Fundamentals</option>
+            </select><br><br>
+            Given Score (1-10):<br>
+            <select name="score">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select><br><br>
+            Reason:<br>
+            <textarea name="reason"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+</body>
+</html>

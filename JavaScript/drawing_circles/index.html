@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Drawing Circles</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div id="container"></div>
+      <div id="pink"></div>
+      <div id="purple"></div>
+      <div id="blue"></div>
+      <div id="reset">RESET</div>
+    <!--script>
+        let style = {
+            position: 'absolute',
+            backgroundcolor: '#CCE8CC',
+            width: '',
+            height: '',
+            top: '',
+            left: '',
+            outline: 'black',
+        }
+
+        document.getElementById('container').addEventListener('click', function(event){
+          const radius = Math.floor(Math.random() * 191) + 10;
+          style.width = radius + 'px';
+          style.height = radius + 'px';
+          style.top = (event.clientY - radius / 2) + 'px';
+          style.left = (event.clientX - radius / 2) + 'px'; 
+          console.log(style);
+          
+          let circle = document.createElement('div');
+          circle.style.cssText = `position:${style.position}; top:${style.top}; left:${style.left}; width:${style.width}; height:${style.height}; border-radius: 50%; background-color: ${style.backgroundcolor};`;
+          document.getElementById('container').appendChild(circle);
+        });
+
+        document.getElementById('pink').addEventListener('click', function(event){
+          this.style.outline = '2px solid gray';
+          purple.style.outline = 'none';
+          blue.style.outline = 'none';
+
+          style.backgroundcolor = '#ffc0cb';
+          
+        });
+
+        document.getElementById('purple').addEventListener('click', function(event){
+          this.style.outline = '2px solid gray';
+          pink.style.outline = 'none';
+          blue.style.outline = 'none';
+          
+          style.backgroundcolor = '#ca45ca';
+        });
+
+        document.getElementById('blue').addEventListener('click', function(event){
+          this.style.outline = '2px solid gray';
+          purple.style.outline = 'none';
+          pink.style.outline = 'none';
+          
+          style.backgroundcolor = '#6868d4';
+        });
+
+        document.getElementById('reset').addEventListener('click', function(event){
+          this.style.outline = '2px solid gray';
+          purple.style.outline = 'none';
+          pink.style.outline = 'none';
+          blue.style.outline = 'none';
+          container.innerHTML = '';
+        });
+    </script-->
+  </body>   
+</html>

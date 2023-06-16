@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#datepicker").datepicker();
+
+            $('form').submit(function() {
+                var fname = $("input[name='first-name']").val();
+                var lname = $("input[name='last-name']").val();
+                var date = $("input[name='date']").val();
+
+                if (!fname || !lname || !date) {
+                    if (!fname) {
+                        alert("First name can't be blank!");
+                    } else if (!lname) {
+                        alert("Last name can't be blank!");
+                    } else {
+                        alert("Preferred date can't be blank!");
+                    }
+                    return false;
+                } else {
+                    alert("Success, " + fname + " " + lname + "! Your vaccination is reserved on " + date + ".");
+                    return true;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Scheduling Form for Vaccination</h1>
+
+        <form action="" method="POST">
+            <label class="first-name">First Name: <input type="text" name="first-name"></label>
+            <label class="last-name">Last Name: <input type="text" name="last-name"></label>
+            <label class="date">Preferred Date: <input type="text" id="datepicker" name="date"></label>   
+            <input class="ui-button ui-widget ui-corner-all" type="submit" value="Reserve">
+        </form>
+    </div>
+</body>
+</html>

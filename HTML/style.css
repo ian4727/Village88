@@ -1,0 +1,64 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#logo{
+    min-height: 130px;
+    width: 260px;
+    background-color: #B97A57;
+}
+#wrapper{
+    width: 940px;
+    background-color: #FFD9B7;
+    padding: 10px;
+    
+}
+#navigation{
+    min-height: 130px;
+    width: 655px;
+    background-color: #FF7F27;
+}
+
+#main_content{
+    min-height: 250px;
+    width: 890px;
+    background-color: #880015;
+    padding: 20px;
+    
+}
+#about{
+    min-height: 250px;
+    width: 650px;
+    background-color: #FFAEC9;
+}
+#advertisement{
+    min-height: 200px;
+    width: 155px;
+    background-color: #C8BFE7;
+    margin-left: 40px;
+}
+.sponsors{
+    min-height: 65px;
+    width: 307.5px;
+    background-color: #FFFF88;
+    display: inline-block;
+    
+}
+
+.header{
+    display:inline-block;
+    margin: 5px;
+
+}
+
+.body{
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+}
+
+#sponsor1{
+    margin-left: 5px;
+    margin-top: 10px;
+}
